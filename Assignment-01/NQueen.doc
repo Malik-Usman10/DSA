@@ -1,0 +1,46 @@
+N-Queens Problem Documentation
+Problem Explanation
+The N-Queens problem is a classic combinatorial problem that involves placing N queens on an N×N chessboard in such a way that no two queens threaten each other.
+This means that:
+
+No two queens can be placed in the same row.
+No two queens can be placed in the same column.
+No two queens can be placed on the same diagonal.
+The challenge lies in finding all possible configurations that satisfy these conditions. 
+
+The problem can be solved using backtracking, a method that incrementally builds candidates for solutions 
+and abandons a candidate as soon as it is determined that it cannot lead to a valid solution.
+
+Problem Analysis:
+Characteristics of the N-Queens Problem:
+
+Input: The problem takes a single integer N, which represents both the number of queens and the dimensions of the chessboard.
+Output: The output is either a valid configuration of the queens on the chessboard or a message indicating that no solution exists.
+Complexity: The problem is NP-hard, meaning that the time required to solve the problem grows exponentially with the size of N. 
+However, practical implementations can find solutions efficiently for reasonably sized N (typically N ≤ 15).
+
+Constraints:
+The minimum value for N is generally 4, as smaller values (1, 2, 3) do not allow for a valid arrangement of queens.
+The algorithm must ensure that all queens are placed without threatening each other, requiring checks for row, column, and diagonal conflicts.
+
+Backtracking Approach:
+The provided C++ implementation uses a backtracking algorithm to solve the N-Queens problem. Here’s a breakdown of the approach:
+
+Initialization:
+
+A class NQueen is defined, which initializes an array board to store the positions of queens.
+Each index in the board array corresponds to a column, and the value at that index represents the row where the queen is placed.
+Safety Check:
+
+The "isSafe" method checks if placing a queen at a given position (row, col) is valid:
+It iterates through previous columns to ensure no two queens are in the same row.
+It checks both diagonals to ensure no queens threaten each other.
+
+Recursive Solution:
+The solve method attempts to place queens column by column:
+If all queens are placed successfully, it returns true.
+If a position is found to be valid, it places the queen and recursively attempts to place queens in the next column.
+If placing a queen leads to a dead end, it backtracks by removing the queen and trying the next row.
+
+Output:
+Upon finding a solution, the printSolution method displays the chessboard with queens represented by "Q" and empty spaces by ".".
