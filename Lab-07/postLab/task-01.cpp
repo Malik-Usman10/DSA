@@ -1,10 +1,10 @@
 #include <iostream>
-#include <cstdint>
+
 using namespace std;
 
 class XORList 
 {
-private:
+private: 
     struct Node 
     {
         int data;
@@ -31,7 +31,7 @@ public:
         {
             next = XOR(prev, curr->npx);
             delete curr;
-            prev = curr;
+            prev = curr;  
             curr = next;
         }
     }
@@ -72,8 +72,8 @@ public:
         head = XOR(nullptr, head->npx);
         if (head != nullptr) 
         {
-            head->npx = XOR(nullptr, XOR(temp, head->npx));
-        } 
+            head->npx = XOR(nullptr, XOR(temp, head->npx));  /* head XOR mixVal :: nextNodeAddress XOR NULLPTR == nextNodeAddress */
+        }
         else 
         {
             tail = nullptr;

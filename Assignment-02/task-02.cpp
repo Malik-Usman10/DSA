@@ -32,11 +32,6 @@ public:
                 cout << "Error: Patient with ID " << id << " already exists in the queue.\n";
                 return true;
             }
-            if (current->name == name)
-            {
-                cout << "Error: Patient with name " << name << " already exists in the queue.\n";
-                return true;
-            }
             current = current->next;
         }
         return false;

@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
-using namespace std;
 
+using namespace std;
+ 
 struct ProjectNode
 {
     string projectName;
@@ -9,8 +10,7 @@ struct ProjectNode
     bool isCompleted;
     ProjectNode *next;
 
-    ProjectNode(const string &name, const string &code, bool status)
-        : projectName(name), projectCode(code), isCompleted(status), next(nullptr) {}
+    ProjectNode(const string &name, const string &code, bool status): projectName(name), projectCode(code), isCompleted(status), next(nullptr) {}
 };
 
 struct EmployeeData
@@ -19,8 +19,7 @@ struct EmployeeData
     string employeeID;
     ProjectNode *head;
 
-    EmployeeData(const string &name, const string &id)
-        : name(name), employeeID(id), head(nullptr) {}
+    EmployeeData(const string &name, const string &id): name(name), employeeID(id), head(nullptr) {}
 };
 
 struct EmployeeNode
@@ -29,8 +28,7 @@ struct EmployeeNode
     EmployeeNode *prev;
     EmployeeNode *next;
 
-    EmployeeNode(const string &id, const string &name)
-        : data(name, id), prev(nullptr), next(nullptr) {}
+    EmployeeNode(const string &id, const string &name): data(name, id), prev(nullptr), next(nullptr) {}
 };
 
 class EmployeeList
@@ -317,6 +315,4 @@ int main()
             cout << "Invalid choice.\n";
         }
     } while (choice != 0);
-
-    return 0;
 }
